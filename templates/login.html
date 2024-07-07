@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+
+<h1 class="bg-sky-400 text-white text-center p-4 font-bold capitalize  text-2xl w-full" > login form</h1>
+
+<form class="flex flex-col justify-around  items-center bg-sky-400 w-4/5 h-[25rem] rounded-md " method="POST" action="/login">
+	
+
+	<p class="flex flex-col gap-2" >
+			<input class=" p-2  rounded-md text-xl "   type="email" name='email' placeholder="Enter your email"  />
+			<span class="text-red-600 hidden">invalid email</span>
+		</p>
+
+		<p class="flex flex-col gap-2" >
+		<input class=" p-2 rounded-md text-xl "  type="password" name="password" placeholder="Enter your new Password"  />
+		<span class="text-red-600 hidden">invalid email</span>
+		</p>
+
+	<div class="flex gap-5 ">
+		<button class=" capitalize border-white border-2  rounded-md text-white p-2 w-[5rem] hover:text-black hover:bg-white"  ><a href="/register">signup</a></button>
+			<button class="capitalize bg-black rounded-md text-gray-400 p-2 w-[5rem] hover:text-white  hover:bg-black"  type='submit'>login</button>
+		
+		</div>
+	
+</form>
+
+
+{% endblock %}
