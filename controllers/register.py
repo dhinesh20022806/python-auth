@@ -1,4 +1,4 @@
-from flask import render_template, request
+from flask import render_template, request, make_response
 from re import match
 
 from encrypt import hash_password
@@ -42,4 +42,8 @@ def post_register():
 
     password = hash_password(plain_text)
     insert_table(email, password)
-    return '<h1>you register successfully!</h1>'
+
+    resp = make_response('<h1>you register successfully!</h1>')
+    resp.set_cookie('email', email)
+    resp.set_cookie('password',plain_text)
+    return resp
