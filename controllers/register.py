@@ -2,7 +2,7 @@ from flask import render_template, request
 from re import match
 
 from encrypt import hash_password
-import models.auth_db as db 
+from models.register import insert_table
 
 
 def get_register():
@@ -30,6 +30,6 @@ def post_register():
 	# 	return register(); 
 
 	password = hash_password(plain_text)
-	print(email, password)
+	insert_table(email, password)
 	return 'you register successfully!'
 
