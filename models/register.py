@@ -1,24 +1,25 @@
 from db.database import get_db
 
+
 def create_table():
-	db = get_db()
+    db = get_db()
 
-	cursor = db.cursor()
+    cursor = db.cursor()
 
-	cursor.execute(""" 
-		IF NOT EXIST CREATE TABLE users
-		(
-			id SERIAL,
-			email VARCHAR(100) UNIQUE,
-			password TEXT
+    cursor.execute(""" 
+        IF NOT EXIST CREATE TABLE users
+        (
+            id SERIAL,
+            email VARCHAR(100) UNIQUE,
+            password TEXT
 
-		);
+        );
 
-		""")
-	print('successfully created ')
+        """)
+    print('successfully created ')
 
-	if __name__ == '__main__':
-		create_table()
+    if __name__ == '__main__':
+        create_table()
 
 
 def insert_table(email, password):
